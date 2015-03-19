@@ -1,5 +1,5 @@
 /*!
- * basics.css v2.1.1 - 2015-03-06
+ * basics.css v2.1.2 - 2015-03-19
  * Copyright 2014 Christoph Heich | http://cheich.github.io/CSS-Basics/
  * Released under the MIT license | https://github.com/cheich/CSS-Basics/blob/gh-pages/LICENSE.md
  */
@@ -1219,9 +1219,10 @@ img {
 .horizontal-menu li {
 	display: block;
 	width: 100%;
-	float: left;
 }
+[dir="rtl"] .horizontal-menu ol,
 [dir="rtl"].horizontal-menu ol,
+[dir="rtl"] .horizontal-menu ul,
 [dir="rtl"].horizontal-menu ul {
 	left: auto;
 	right: 0;
@@ -1241,11 +1242,14 @@ img {
 		width: auto;
 		position: relative;
 		text-align: center;
+		float: left;
 	}
 	.vertical-menu li {
 		clear: both;
 	}
+	[dir="rtl"] .horizontal-menu li,
 	[dir="rtl"].horizontal-menu li,
+	[dir="rtl"] .vertical-menu li,
 	[dir="rtl"].vertical-menu li {
 		float: right;
 	}
