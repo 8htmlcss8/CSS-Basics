@@ -3,227 +3,377 @@
 <head>
 	<title>CSS Basics</title>
 	<meta charset="UTF-8" />
-
-	<!-- Normalize -->
-	<link rel="stylesheet" type="text/css" href="css/vendor/normalize-3.0.2.css" />
-
-	<!-- jQuery libraries -->
-	<script type="text/javascript" src="../../vendor/js/jquery-1.11.1.min.js"></script>
+	
+	<!-- For debug reasons -->
+	<meta http-equiv="X-UA-Compatible" content="IE=8" />
 
 	<!-- CSS Basics -->
-	<link rel="stylesheet" type="text/css" href="css/basics.min.css" />
-	
-	<!-- Style -->
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	
-	<script type="text/javascript">
-		$(document).ready(function() {
-			/**
-			 * Support IE<9
-			 */
-			$('div:last-child, li:last-child').addClass('last-child');
-		});
-	</script>
+	<link rel="stylesheet" type="text/css" href="src/basics.css" />
+
 	<style type="text/css">
-		.grid-row {
+		.container {
 			text-align: center;
 		}
+		#page {
+			max-width: 1337px;
+			margin: 0 auto;
+			padding: 1em;
+		}
+		.position-container {
+			background: #ccc;
+			height: 400px;
+			margin: 100px 200px;
+		}
+		.position-container div {
+			background: #555;
+			color: #efefef;
+			width: 180px;
+			height: 80px;
+			line-height: 80px;
+			text-align: center;
+		}
+		.position-container div span {
+			display: inline-block;
+			vertical-align: middle;
+			line-height: 1;
+		}
+		p label span {
+			width: 100px;
+		}
+		dt {
+			font-weight: bold;
+		}
 	</style>
+	<script type="text/javascript" src="vendor/js/jquery.min.js"></script>
+	<!--[if lte IE 8]>
+		<script type="text/javascript" src="vendor/js/respond.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="src/basics.ie.css" />
+	<![endif]-->	
 </head>
 <body>
-	<h1>CSS Basics<br /></h1>
-	<small>Write less, Style more</small>
-	<h2 id="setup">Setup</h2>
-	<p>You only have to insert the basics.min.css file for all features (No styles are included).</p>
-	<p>There are also files with only the core or only the responsive/adaptive part.</p>
+	<div id="page">
+		<h1>CSS Basics</h1>
+		<p>You're the web artist. So... why should a CSS framework restrict your artistry?</p>
+		<p>CSS Basics is built to start styling your page without worry about any position and behaviour problems. It's mobile first and scales up to large displays with Twitters incredible Bootstrap <a href="http://getbootstrap.com/css/#grid">grid system</a> and <a href="http://getbootstrap.com/css/#responsive-utilities">responsive utilities</a>.</p>
+		
+		<h2 id="setup">Setup</h2>
+		<p>Just include <strong>basics.min.css</strong> before all other stylesheets and javascripts.</p>
 
-	<h2>Features</h2>
-	<ul>
-		<li>Fully responsive and adaptive</li>
-		<li>RTL support</li>
-		<li>Ready for jQuery UI</li>
-		<li>Very lightweight (Only 4 KB)</li>
-	</ul>
-	
-	<h2>Browser support</h2>
-	<ul>
-		<li>IE>8 (with just one line of JS ready for IE 7 and 8)</li>
-		<li>Chrome, Firefox, Safari and all other major browsers</li>
-	</ul>
-	
-	<h2>Menus</h2>
-	<h3 id="hmenu">Horizontal menu</h3>
-	<div class="result">
-		<ul class="hmenu">
-			<li><a href="">List point 1</a></li>
-			<li><a href="">List point 2</a></li>
-			<li><a href="">List point 3</a>
+		<h2>Features</h2>
+		<ul>
+			<li>No styles - just basics</li>
+			<li>Responsive and adaptive</li>
+			<li>Mobile first</li>
+			<li>RTL support</li>
+			<li>Easy implementation - just a few classes</li>
+			<li>Lightweight - only ~21 KB (minimized version)</li>
+		</ul>
+
+		<h2>Included</h2>
+		<ul>
+			<li>Menus
 				<ul>
-					<li><a href="">Sub point 1</a></li>
-					<li><a href="">Sub point 2</a>
-						<ul>
-							<li><a href="">SubSub point 1</a></li>
-							<li><a href="">SubSub point 2</a></li>
-							<li><a href="">SubSub point 3</a></li>
-						</ul>
-					</li>
-					<li><a href="">Sub point 3</a>
-						<ul>
-							<li><a href="">SubSub point 1</a></li>
-							<li><a href="">SubSub point 2</a></li>
-							<li><a href="">SubSub point 3</a></li>
-						</ul>
-					</li>
+					<li>Horizontal</li>
+					<li>Vertical</li>
+				</ul>
+			</li>
+			<li>Forms</li>
+			<li>Tables</li>
+			<li>Helpers</li>
+			<li>Positioning</li>
+			<li>Externals
+				<ul>
+					<li><a href="https://necolas.github.io/normalize.css/">Normalize.css</a></li>
+					<li>Twitters Bootstrap <a href="http://getbootstrap.com/css/#grid">grid system</a> and <a href="http://getbootstrap.com/css/#responsive-utilities">responsive utilities</a></li>
+					<li>WordPress core (modified) - Of course you can use it outside of WordPress</li>
 				</ul>
 			</li>
 		</ul>
-	</div>
 
-	<h3 id="vnav">Vertical menu</h3>
-	<div class="result">
-		<ul class="vmenu">
-			<li><a href="">List point 1</a></li>
-			<li><a href="">List point 2</a></li>
-			<li><a href="">List point 3</a>
-				<ul>
-					<li><a href="">Sub point 1</a></li>
-					<li><a href="">Sub point 2</a>
-						<ul>
-							<li><a href="">SubSub point 1</a></li>
-							<li><a href="">SubSub point 2</a></li>
-							<li><a href="">SubSub point 3</a></li>
-						</ul>
-					</li>
-					<li><a href="">Sub point 3</a>
-						<ul>
-							<li><a href="">SubSub point 1</a></li>
-							<li><a href="">SubSub point 2</a></li>
-							<li><a href="">SubSub point 3</a></li>
-						</ul>
-					</li>
-				</ul>
+		<h2>Browser support</h2>
+		<ul>
+			<li>IE >= 9<br />
+				IE < 9 doesn't support these requirements:
+				<dl>
+					<dt>Media Queries</dt>
+					<dd>Affects: All responsive utilities</dd>
+					<dd>Solution: Include <a href="https://github.com/scottjehl/Respond" target="_blank">respond.js</a></dd>
+					
+					<dt>2D Transform</dt>
+					<dd>Affects Positioning</dd>
+					<dd>Solution: Include basics.ie.css - Requires to set width/height</dd>
+				</dl>
 			</li>
+			<li>Chrome, Firefox, Safari and all other major browsers</li>
 		</ul>
-	</div>
 
-	<h2 id="grid">Grid</h2>
-	<p>
-	</p>
-	<div class="result">
-		<div class="grid-row">
-			<div class="grid-col-1">1</div>
-			<div class="grid-col-1">1</div>
-			<div class="grid-col-1">1</div>
-			<div class="grid-col-1">1</div>
-			<div class="grid-col-1">1</div>
-			<div class="grid-col-1">1</div>
-			<div class="grid-col-1">1</div>
-			<div class="grid-col-1">1</div>
-			<div class="grid-col-1">1</div>
-			<div class="grid-col-1">1</div>
-			<div class="grid-col-1">1</div>
-			<div class="grid-col-1">1</div>
+		<h2>Menus</h2>
+		<p>Setup multidimensional menus with plain CSS and mouse-over effects. Menus can be build with ordered or unordered lists. Set the class to the parent list.</p>
+		<h3 id="horizontal-menu">Horizontal menu <code>.horizontal-menu</code></h3>
+		<div class="result">
+			<ul class="horizontal-menu">
+				<li><a href="">List point 1</a></li>
+				<li><a href="">List point 2</a></li>
+				<li><a href="">List point 3</a>
+					<ul>
+						<li><a href="">Sub point 1</a></li>
+						<li><a href="">Sub point 2</a>
+							<ul>
+								<li><a href="">SubSub point 1</a></li>
+								<li><a href="">SubSub point 2</a></li>
+								<li><a href="">SubSub point 3</a></li>
+							</ul>
+						</li>
+						<li><a href="">Sub point 3</a>
+							<ul>
+								<li><a href="">SubSub point 1</a></li>
+								<li><a href="">SubSub point 2</a></li>
+								<li><a href="">SubSub point 3</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<h3 id="vertical-menu">Vertical menu <code>.vertical-menu</code></h3>
+		<div class="result">
+			<ul class="vertical-menu">
+				<li><a href="">List point 1</a></li>
+				<li><a href="">List point 2</a></li>
+				<li><a href="">List point 3</a>
+					<ul>
+						<li><a href="">Sub point 1</a></li>
+						<li><a href="">Sub point 2</a>
+							<ul>
+								<li><a href="">SubSub point 1</a></li>
+								<li><a href="">SubSub point 2</a></li>
+								<li><a href="">SubSub point 3</a></li>
+							</ul>
+						</li>
+						<li><a href="">Sub point 3</a>
+							<ul>
+								<li><a href="">SubSub point 1</a></li>
+								<li><a href="">SubSub point 2</a></li>
+								<li><a href="">SubSub point 3</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<h2 id="grid">Grid</h2>
+		<p>
+		Just an example - see full documentation on <a href="http://getbootstrap.com/css/#grid">getbootstrap.com</a>
+		</p>
+		<div class="result">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-2 col-md-4 col-md-6">Col #1</div>
+					<div class="col-lg-2 col-md-4 col-md-6">Col #2</div>
+					<div class="col-lg-2 col-md-4 col-md-6">Col #3</div>
+					<div class="col-lg-2 col-md-4 col-md-6">Col #4</div>
+					<div class="col-lg-2 col-md-4 col-md-6">Col #5</div>
+					<div class="col-lg-2 col-md-4 col-md-6">Col #6</div>
+				</div>
+			</div>
 		</div>
 		
-		<div class="grid-row">
-			<div class="grid-col-2">2</div>
-			<div class="grid-col-2">2</div>
-			<div class="grid-col-2">2</div>
-			<div class="grid-col-2">2</div>
-			<div class="grid-col-2">2</div>
-			<div class="grid-col-2">2</div>
+		<h2 id="table">Tables</h2>
+		<p>There isn't much to do with tables. Just a little responsive utility: Wrap the table with <code>.table-responsive</code>. This will set a horizontal scrollbar, if the table is to wide.</p>
+		<div class="result">
+			<div class="table-responsive">
+				<table>
+					<thead>
+						<tr>
+							<th>Tables head 1</th>
+							<th>Tables head 2</th>
+							<th>Tables head 3</th>
+							<th>Tables head 4</th>
+							<th>Tables head 5</th>
+							<th>Tables head 6</th>
+							<th>Tables head 7</th>
+							<th>Tables head 8</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Table data 1<br />multi<br />line</td>
+							<td>Table data 2</td>
+							<td>Table data 3</td>
+							<td>Table data 4</td>
+							<td>Table data 5</td>
+							<td>Table data 6</td>
+							<td>Table data 7</td>
+							<td nowrap="nowrap">Table data 8 - don't wrap it!</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
-		
-		<div class="grid-row">
-			<div class="grid-col-3">3</div>
-			<div class="grid-col-3">3</div>
-			<div class="grid-col-3">3</div>
-			<div class="grid-col-3">3</div>
+
+		<h2 id="form">Forms</h2>
+		<p>Love the way to wrap form elements into <code>&lt;label></code>'s. Advantage: no need to assign ID's to every form element. If you want to style only the text, wrap it with <code>&lt;span></code>.</p>
+		<p>See the responsive behaviour by resizing your browser window - it's never been easier to make forms mobile ready!</p>
+		<div class="result">
+			<form action="">
+				<fieldset>
+					<legend>Default behaviour - everything is horizontal - mobile first</legend>
+					<input type="text" placeholder="This one don't have a label" />
+					<label>Text <input type="text" /></label>
+					<label>File <input type="file" /></label>
+					<label>Password <input type="password" /></label>
+					<label>Color <input type="color" /></label>
+					<label>Range <input type="range" /></label>
+					<label>
+						Select
+						<select>
+							<option>Option 1</option>
+							<option>Option 2</option>
+							<option>Option 3</option>
+						</select>
+					</label>
+					<label>Textarea<textarea></textarea></label>
+					<label><input name="checkbox" type="checkbox" /> Checkbox 1</label>
+					<label><input name="checkbox" type="checkbox" /> Checkbox 2</label>
+					<label><input name="checkbox" type="checkbox" /> Checkbox 3</label>
+					<input type="submit" value="Submit" />
+					<button>Button</button>
+				</fieldset>
+				<fieldset>
+					<legend>Inline form</legend>
+					<p>Set <code>.form-inline-</code> (with breakpoint keyword) to a parent element (form, fieldset or label etc.) to make everything in-line. Smaller breakpoints will overwrite larger breakpoints. Class <code>.form-inline-xs</code> will force in-line on mobile devices.</p>
+					<div class="form-inline-md">
+						<label>Text <input type="text" /></label>
+						<label>
+							Select
+							<select>
+								<option>Option 1</option>
+								<option>Option 2</option>
+								<option>Option 3</option>
+							</select>
+						</label>
+						<label>Textarea <textarea></textarea></label>
+						<label><input name="checkbox" type="checkbox" /> Checkbox 1</label>
+						<label><input name="checkbox" type="checkbox" /> Checkbox 2</label>
+						<label><input name="checkbox" type="checkbox" /> Checkbox 3</label>
+						<input type="submit" value="Submit" />
+						<button>Button</button>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Table like</legend>
+					<p>Form elements should not be structured with tables. To make a form looks like a table, use bootstraps grid system. You can use <code>&lt;label></code>'s as grid row, still don't worry about ID's - cool.</p>
+					<div class="container-fluid">
+						<label class="row">
+							<div class="col-md-6">Text</div>
+							<div class="col-md-6"><input type="text" /></div>
+						</label>
+						<label class="row">
+							<div class="col-md-6">Textarea</div>
+							<div class="col-md-6"><textarea></textarea></div>
+						</label>
+						<div class="row">
+							<div class="col-md-6">Checkboxes</div>
+							<div class="col-md-6">
+								<label><input name="checkbox" type="checkbox" /> Checkbox 1</label>
+								<label><input name="checkbox" type="checkbox" /> Checkbox 2</label>
+								<label><input name="checkbox" type="checkbox" /> Checkbox 3</label>								
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">Checkboxes - in-line</div>
+							<div class="col-md-6 form-inline-md">
+								<label><input name="checkbox" type="checkbox" /> Checkbox 1</label>
+								<label><input name="checkbox" type="checkbox" /> Checkbox 2</label>
+								<label><input name="checkbox" type="checkbox" /> Checkbox 3</label>								
+							</div>
+						</div>
+					</div>
+				</fieldset>			
+			</form>
 		</div>
-		
-		<div class="grid-row">
-			<div class="grid-col-4">4</div>
-			<div class="grid-col-4">4</div>
-			<div class="grid-col-4">4</div>
-		</div>
-		
-		<div class="grid-row">
-			<div class="grid-col-6">6</div>
-			<div class="grid-col-6">6</div>
-		</div>
-		
-		<div class="grid-row">
-			<div class="grid-col-12">12</div>
-		</div>
-	</div>
 	
-	<h2 id="form">Forms</h2>
-	<div class="result">
-		<form action="">
-			<fieldset>
-				<legend>Input fields</legend>
-				<label>Text<br /><input type="text" /></label><br />
-				<label>Password<br /><input type="password" /></label><br />
-				<label>File<br /><input type="file" /></label><br />
-				<label>Color<br /><input type="color" /></label><br />
-				<label>Range<br /><input type="range" /></label><br />
-				<label>Textarea<br /><textarea></textarea></label>				
-			</fieldset>
-			<fieldset>
-				<legend>Radio buttons</legend>
-				<label><input name="radio" type="radio" />Radio 1</label>
-				<label><input name="radio" type="radio" />Radio 2</label>
-				<label><input name="radio" type="radio" />Radio 3</label>
-			</fieldset>
-			<fieldset>
-				<legend>Checkboxes</legend>
-				<label><input name="checkbox" type="checkbox" />Checkbox 1</label>
-				<label><input name="checkbox" type="checkbox" />Checkbox 2</label>
-				<label><input name="checkbox" type="checkbox" />Checkbox 3</label>
-			</fieldset>
-			<fieldset>
-				<legend>Selections</legend>
-				<select>
-					<option value="">Option 1</option>
-					<option value="">Option 2</option>
-					<option value="">Option 3</option>
-				</select>
-			</fieldset>
-		</form>
-	</div>
-	
-	<div class="result" dir="rtl">
-		<form action="">
-			<fieldset>
-				<legend>Input fields</legend>
-				<label><span>Text</span><input type="text" /></label><br />
-				<label><span>Password</span><input type="password" /></label><br />
-				<label><span>File</span><input type="file" /></label><br />
-				<label><span>Color</span><input type="color" /></label><br />
-				<label><span>Range</span><input type="range" /></label><br />
-				<label><span>Textarea</span><textarea></textarea></label>
-			</fieldset>
-			<fieldset>
-				<legend>Radio buttons</legend>
-				<label><input name="radio" type="radio" />Radio 1</label>
-				<label><input name="radio" type="radio" />Radio 2</label>
-				<label><input name="radio" type="radio" />Radio 3</label>
-			</fieldset>
-			<fieldset>
-				<legend>Checkboxes</legend>
-				<label><input name="checkbox" type="checkbox" />Checkbox 1</label>
-				<label><input name="checkbox" type="checkbox" />Checkbox 2</label>
-				<label><input name="checkbox" type="checkbox" />Checkbox 3</label>
-			</fieldset>
-			<fieldset>
-				<legend>Selections</legend>
-				<select>
-					<option value="">Option 1</option>
-					<option value="">Option 2</option>
-					<option value="">Option 3</option>
-				</select>
-			</fieldset>
-		</form>
+		<h2 id="helpers">Helpers</h2>
+		<div class="result">
+			<h3>Hidden</h3>
+			<p>Hide elements with <code>.hidden</code> (inaccessible for screen-readers)</p>
+			<pre>.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}</pre>
+			
+			<h3>Invisible</h3>
+			<p>Hide elements with <code>.invisible</code> (accessible for screen-readers)</p>
+			<p>Also works with  <code>.screen-reader-text</code> for compatibility reasons with WordPress.</p>
+			<pre>.invisible {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}</pre>
+
+			<h3>Clearfix</h3>
+			<p>Clear floats with <code>.clearfix</code></p>
+
+			<h3>Alignments</h3>
+			<p>Align text and images with <code>.alignleft</code>, <code>.alignright</code>, <code>.aligncenter</code> and <code>.alignnone</code>.</p>
+		
+			<h3>Image caption</h3>
+			<p>Gice your images an caption below the image with <code>.caption</code>.</p>
+			<p>Still works with  <code>.wp-caption</code> for compatibility reasons with WordPress.</p>
+		</div>
+						
+		<h2>Positioning</h2>
+		<div class="result">
+			<p>This solution works whether you set width/height or not to the positioned element. Take note that outer elements will overlap the border while inner elements won't. Class structure is [x-property]-[y-property] e.g. right-bottom.</p>
+			<strong>Important!</strong>
+			<p>Since IE&lt;=8 doesn't support CSS3 transform, you have to include basics.ie.css. Then you have to set width/height to the elements.</p>
+			<div class="position-container">
+				<div class="left-outertop">.left-outertop</div>
+				<div class="left-top">.left-top</div>
+				<div class="left-center">.left-center</div>
+				<div class="left-outerbottom">.left-outerbottom</div>
+				<div class="left-bottom">.left-bottom</div>
+				
+				<div class="outerleft-outertop reset-position-">.outerleft-outertop</div>
+				<div class="outerleft-top">.outerleft-top</div>
+				<div class="outerleft-center">.outerleft-center</div>
+				<div class="outerleft-outerbottom">.outerleft-outerbottom</div>
+				<div class="outerleft-bottom">.outerleft-bottom</div>
+				
+				<div class="right-outertop">.right-outertop</div>
+				<div class="right-top">.right-top</div>
+				<div class="right-center">.right-center</div>
+				<div class="right-outerbottom">.right-outerbottom</div>
+				<div class="right-bottom">.right-bottom</div>
+				
+				<div class="outerright-outertop">.outerright-outertop</div>
+				<div class="outerright-top">.outerright-top</div>
+				<div class="outerright-center">.outerright-center</div>
+				<div class="outerright-outerbottom">.outerright-outerbottom</div>
+				<div class="outerright-bottom">.outerright-bottom</div>
+				
+				<div class="center-outertop">.center-outertop</div>
+				<div class="center-top">.center-top</div>
+				<div class="center"><span>.center<br />or<br />.center-center</span></div>
+				<div class="center-outerbottom">.center-outerbottom</div>
+				<div class="center-bottom">.center-bottom</div>
+			</div>
+			<br class="clearfix" />
+			<h3>Position reset</h3>
+			<p>In order to reset all position effect, set <code>.position-reset-</code> (with responsive keywords). This will reset it only on the specified keyword-width. Reset style code: <pre>	
+position: static;
+top: auto;
+left: auto;
+right: auto;
+bottom: auto;
+-webkit-transform: none;
+   -moz-transform: none;
+    -ms-transform: none;
+     -o-transform: none;
+        transform: none;</pre></p>
+		</div>
 	</div>
 </body>
 </html>

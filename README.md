@@ -10,7 +10,7 @@ CSS Basics is built to start styling your page without worry about any position 
 * Mobile first
 * RTL support
 * Easy implementation - just a few classes
-* Lightweight - only 20.3 KB (minimized version)
+* Lightweight - only ~21 KB (minimized version)
 
 ## Setup
 Just include **basics.min.css** before all other stylesheets and javascripts.
